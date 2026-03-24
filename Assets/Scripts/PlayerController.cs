@@ -3,123 +3,98 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class PlayerController : MonoBehaviour
 {
-    [Header("Components")]
-    public CharacterController controller;
-    public Transform playerCamera;
-    public Transform groundCheck;     
-    public LayerMask groundMask;      
+    [Header("Beweging Instellingen")]
+    public float walkSpeed = 5f;
+    public float sprintSpeed = 10f;
+    public float gravity = -9.81f;
+    public float jumpHeight = 1.5f;
 
-    [Header("Movement")]
-    public float walkSpeed = 7f;      
-    public float jumpForce = 12f;     
-    public float mouseSensitivity = 2f;
+    [Header("Kijk Instellingen")]
+    public Camera playerCamera;
+    public float mouseSensitivity = 200f;
+    public float lookUpLimit = -90f;
+    public float lookDownLimit = 90f;
 
-    [Header("Hard Physics")]
-    public float gravity = -60f;        
-    public float groundDistance = 0.2f; 
-    
+    [Header("Zoom Instellingen")]
+    public float normalFOV = 60f;   // Standaard beeldhoek
+    public float zoomFOV = 30f;     // Beeldhoek tijdens inzoomen (lager is verder inzoomen)
+    public float zoomSpeed = 10f;   // Hoe vloeiend de zoom gaat
+
+    private CharacterController controller;
     private Vector3 velocity;
-    private bool isGrounded;
-
-    [Header("Head Wobble")]
-    public bool useHeadBob = true;
-    public float bobFrequency = 12f;    
-    public float bobVerticalAmount = 0.06f;   
-    public float bobHorizontalAmount = 0.1f; 
-    public float tiltAmount = 2.0f;          
-
     private float xRotation = 0f;
-    private Vector3 defaultCameraPos; 
-    private float bobTimer;
+    private bool isGrounded;
 
     void Start()
     {
-        if (controller == null) controller = GetComponent<CharacterController>();
-        if (playerCamera == null) playerCamera = GetComponentInChildren<Camera>().transform;
+        controller = GetComponent<CharacterController>();
 
+        // Cursor verbergen en vastzetten
         Cursor.lockState = CursorLockMode.Locked;
-        defaultCameraPos = playerCamera.localPosition;
+        Cursor.visible = false;
+
+        if (playerCamera == null)
+        {
+            playerCamera = GetComponentInChildren<Camera>();
+        }
+        
+        // Zorg dat de camera start op de normale FOV
+        playerCamera.fieldOfView = normalFOV;
     }
 
     void Update()
     {
-        // 1. DE GROND CHECK (Verbeterd)
-        // We gebruiken nu OverlapSphere om te kijken wat er onder ons zit
-        Collider[] colliders = Physics.OverlapSphere(groundCheck.position, groundDistance, groundMask);
-        
-        isGrounded = false;
-        foreach (var col in colliders)
-        {
-            // Als we iets raken dat NIET de speler zelf is, dan zijn we grounded
-            if (col.gameObject != gameObject)
-            {
-                isGrounded = true;
-                break;
-            }
-        }
+        HandleMouseLook();
+        HandleMovement();
+        HandleZoom();
+    }
+
+    void HandleMouseLook()
+    {
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+
+        xRotation -= mouseY;
+        xRotation = Mathf.Clamp(xRotation, lookUpLimit, lookDownLimit);
+        playerCamera.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+
+        transform.Rotate(Vector3.up * mouseX);
+    }
+
+    void HandleMovement()
+    {
+        isGrounded = controller.isGrounded;
 
         if (isGrounded && velocity.y < 0)
         {
-            velocity.y = -2f; 
+            velocity.y = -2f;
         }
 
-        // 2. Mouse Look
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
-        xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
-        playerCamera.localRotation = Quaternion.Euler(xRotation, 0f, playerCamera.localRotation.eulerAngles.z);
-        transform.Rotate(Vector3.up * mouseX);
+        // Shift voor sprinten
+        float currentSpeed = Input.GetKey(KeyCode.LeftShift) ? sprintSpeed : walkSpeed;
 
-        // 3. Movement
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
-        Vector3 move = transform.right * x + transform.forward * z;
-        controller.Move(move * walkSpeed * Time.deltaTime);
 
-        // 4. JUMP (Nu echt alleen als isGrounded true is)
+        Vector3 move = transform.right * x + transform.forward * z;
+        controller.Move(move * currentSpeed * Time.deltaTime);
+
+        // Springen (Spatiebalk)
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
-            velocity.y = jumpForce;
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
 
-        // 5. Gravity
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
-
-        // 6. Head Wobble
-        if (useHeadBob) HandleHeadWobble();
     }
 
-    private void HandleHeadWobble()
+    void HandleZoom()
     {
-        bool isMoving = (Mathf.Abs(Input.GetAxis("Horizontal")) > 0.1f || Mathf.Abs(Input.GetAxis("Vertical")) > 0.1f) && isGrounded;
+        // Bepaal de doel-FOV op basis van of 'C' wordt ingedrukt
+        float targetFOV = Input.GetKey(KeyCode.C) ? zoomFOV : normalFOV;
 
-        if (isMoving)
-        {
-            bobTimer += Time.deltaTime * bobFrequency;
-            float newX = Mathf.Sin(bobTimer) * bobHorizontalAmount;
-            float newY = Mathf.Cos(bobTimer * 2) * bobVerticalAmount; 
-            float newZ = -Mathf.Sin(bobTimer) * tiltAmount;
-
-            playerCamera.localPosition = new Vector3(defaultCameraPos.x + newX, defaultCameraPos.y + newY, defaultCameraPos.z);
-            playerCamera.localRotation = Quaternion.Euler(xRotation, 0f, newZ);
-        }
-        else
-        {
-            bobTimer = 0;
-            playerCamera.localPosition = Vector3.Lerp(playerCamera.localPosition, defaultCameraPos, Time.deltaTime * 10f);
-            playerCamera.localRotation = Quaternion.Slerp(playerCamera.localRotation, Quaternion.Euler(xRotation, 0f, 0f), Time.deltaTime * 10f);
-        }
-    }
-
-    // Dit tekent het bolletje in de Editor zodat je kunt zien waar de check plaatsvindt
-    void OnDrawGizmosSelected()
-    {
-        if (groundCheck != null)
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawSphere(groundCheck.position, groundDistance);
-        }
+        // Gebruik Lerp om de overgang vloeiend te maken
+        playerCamera.fieldOfView = Mathf.Lerp(playerCamera.fieldOfView, targetFOV, zoomSpeed * Time.deltaTime);
     }
 }

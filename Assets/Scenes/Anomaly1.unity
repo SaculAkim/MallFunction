@@ -5793,7 +5793,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1607498624949726094, guid: 81af66ce3c294394091b6fd31782452e, type: 3}
       propertyPath: mouseSensitivity
-      value: 50
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 6783456387753301408, guid: 81af66ce3c294394091b6fd31782452e, type: 3}
       propertyPath: m_StepOffset

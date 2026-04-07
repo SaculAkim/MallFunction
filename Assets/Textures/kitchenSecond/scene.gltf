@@ -1,0 +1,1238 @@
+{
+  "accessors": [
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 1717,
+      "max": [
+        0.02824495919048786,
+        0.03143744543194771,
+        0.03143744543194771
+      ],
+      "min": [
+        -0.041450779885053635,
+        -0.03143744915723801,
+        -0.031437452882528305
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 20604,
+      "componentType": 5126,
+      "count": 1717,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 1717,
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 1717,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 13736,
+      "componentType": 5126,
+      "count": 1717,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 27472,
+      "componentType": 5126,
+      "count": 1717,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 6768,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 41208,
+      "componentType": 5126,
+      "count": 150,
+      "max": [
+        0.010665364563465118,
+        0.031154097989201546,
+        0.031154097989201546
+      ],
+      "min": [
+        0.004242340102791786,
+        -0.031154101714491844,
+        -0.031154097989201546
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 43008,
+      "componentType": 5126,
+      "count": 150,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 27472,
+      "componentType": 5126,
+      "count": 150,
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 41208,
+      "componentType": 5126,
+      "count": 150,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 42408,
+      "componentType": 5126,
+      "count": 150,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 27072,
+      "componentType": 5125,
+      "count": 576,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 44808,
+      "componentType": 5126,
+      "count": 1108,
+      "max": [
+        0.026313835754990578,
+        0.03143744543194771,
+        0.03143744543194771
+      ],
+      "min": [
+        0.002349155955016613,
+        -0.03143744915723801,
+        -0.031437452882528305
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 58104,
+      "componentType": 5126,
+      "count": 1108,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 29872,
+      "componentType": 5126,
+      "count": 1108,
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 43608,
+      "componentType": 5126,
+      "count": 1108,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 52472,
+      "componentType": 5126,
+      "count": 1108,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 61336,
+      "componentType": 5126,
+      "count": 1108,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 29376,
+      "componentType": 5125,
+      "count": 4452,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 71400,
+      "componentType": 5126,
+      "count": 290,
+      "max": [
+        0.008520147763192654,
+        0.2557583153247833,
+        -0.0022779200226068497
+      ],
+      "min": [
+        -0.1876157969236374,
+        -0.2557584345340729,
+        -0.050439219921827316
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 74880,
+      "componentType": 5126,
+      "count": 290,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 47600,
+      "componentType": 5126,
+      "count": 290,
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 70200,
+      "componentType": 5126,
+      "count": 290,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 72520,
+      "componentType": 5126,
+      "count": 290,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 74840,
+      "componentType": 5126,
+      "count": 290,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 47184,
+      "componentType": 5125,
+      "count": 1188,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 78360,
+      "componentType": 5126,
+      "count": 1786,
+      "max": [
+        0.18351425230503082,
+        0.18351751565933228,
+        0.036800820380449295
+      ],
+      "min": [
+        -0.18351423740386963,
+        -0.1835174560546875,
+        -0.09243910014629364
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 99792,
+      "componentType": 5126,
+      "count": 1786,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 52240,
+      "componentType": 5126,
+      "count": 1786,
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 77160,
+      "componentType": 5126,
+      "count": 1786,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 91448,
+      "componentType": 5126,
+      "count": 1786,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 105736,
+      "componentType": 5126,
+      "count": 1786,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 120024,
+      "componentType": 5126,
+      "count": 1786,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 51936,
+      "componentType": 5125,
+      "count": 7524,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 121224,
+      "componentType": 5126,
+      "count": 7852,
+      "max": [
+        0.0766015350818634,
+        0.07644438743591309,
+        0.013458059169352055
+      ],
+      "min": [
+        -0.07642442733049393,
+        -0.07658427208662033,
+        -0.12060024589300156
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 215448,
+      "componentType": 5126,
+      "count": 7852,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 80816,
+      "componentType": 5126,
+      "count": 7852,
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 134312,
+      "componentType": 5126,
+      "count": 7852,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 197128,
+      "componentType": 5126,
+      "count": 7852,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 259944,
+      "componentType": 5126,
+      "count": 7852,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 82032,
+      "componentType": 5125,
+      "count": 36942,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 309672,
+      "componentType": 5126,
+      "count": 2668,
+      "max": [
+        0.19031213223934174,
+        0.19031213223934174,
+        0.014709989540278912
+      ],
+      "min": [
+        -0.19031213223934174,
+        -0.19031213223934174,
+        -0.0085005983710289
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 341688,
+      "componentType": 5126,
+      "count": 2668,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 206448,
+      "componentType": 5126,
+      "count": 2668,
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 322760,
+      "componentType": 5126,
+      "count": 2668,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 344104,
+      "componentType": 5126,
+      "count": 2668,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 365448,
+      "componentType": 5126,
+      "count": 2668,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 229800,
+      "componentType": 5125,
+      "count": 10656,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 373704,
+      "componentType": 5126,
+      "count": 7063,
+      "max": [
+        0.25584056973457336,
+        0.30534833669662476,
+        0.09778214991092682
+      ],
+      "min": [
+        -0.2505246102809906,
+        -0.3065667450428009,
+        -0.20362567901611328
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 458460,
+      "componentType": 5126,
+      "count": 7063,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 249136,
+      "componentType": 5126,
+      "count": 7063,
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 386792,
+      "componentType": 5126,
+      "count": 7063,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 272424,
+      "componentType": 5125,
+      "count": 27312,
+      "type": "SCALAR"
+    }
+  ],
+  "asset": {
+    "generator": "fab-model-conversion",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 381672,
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 443296,
+      "byteOffset": 381672,
+      "byteStride": 8,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 543216,
+      "byteOffset": 824968,
+      "byteStride": 12,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 362144,
+      "byteOffset": 1368184,
+      "byteStride": 16,
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 1730328,
+      "uri": "scene.bin"
+    }
+  ],
+  "extensionsUsed": [
+    "KHR_materials_specular"
+  ],
+  "images": [
+    {
+      "uri": "textures/knob_red_baseColor.png"
+    },
+    {
+      "uri": "textures/knob_red_metallicRoughness.png"
+    },
+    {
+      "uri": "textures/knob_red_normal.png"
+    },
+    {
+      "uri": "textures/dial_marks_baseColor.png"
+    },
+    {
+      "uri": "textures/dial_marks_metallicRoughness.png"
+    },
+    {
+      "uri": "textures/dial_marks_normal.png"
+    },
+    {
+      "uri": "textures/knob_black_baseColor.png"
+    },
+    {
+      "uri": "textures/knob_black_metallicRoughness.png"
+    },
+    {
+      "uri": "textures/knob_black_normal.png"
+    },
+    {
+      "uri": "textures/Plate-Glass_baseColor.png"
+    },
+    {
+      "uri": "textures/Plate-Glass_metallicRoughness.png"
+    },
+    {
+      "uri": "textures/Plate-Glass_normal.png"
+    },
+    {
+      "uri": "textures/burner_black_outer_2_baseColor.png"
+    },
+    {
+      "uri": "textures/burner_black_outer_2_metallicRoughness.png"
+    },
+    {
+      "uri": "textures/burner_black_outer_2_normal.png"
+    },
+    {
+      "uri": "textures/burner_black_inner_2_baseColor.png"
+    },
+    {
+      "uri": "textures/burner_black_inner_2_metallicRoughness.png"
+    },
+    {
+      "uri": "textures/burner_black_inner_2_normal.png"
+    },
+    {
+      "uri": "textures/burner_black_area_baseColor.png"
+    },
+    {
+      "uri": "textures/burner_black_area_metallicRoughness.png"
+    },
+    {
+      "uri": "textures/burner_black_area_normal.png"
+    },
+    {
+      "uri": "textures/burner_small_base_baseColor.png"
+    },
+    {
+      "uri": "textures/burner_small_base_metallicRoughness.png"
+    },
+    {
+      "uri": "textures/burner_small_base_normal.png"
+    }
+  ],
+  "materials": [
+    {
+      "doubleSided": true,
+      "name": "knob_red",
+      "normalTexture": {
+        "index": 2
+      },
+      "occlusionTexture": {
+        "index": 1
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicRoughnessTexture": {
+          "index": 1
+        }
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "dial_marks",
+      "normalTexture": {
+        "index": 5
+      },
+      "occlusionTexture": {
+        "index": 4
+      },
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.8773136606306777,
+          0.8773136606306777,
+          0.8773136606306777,
+          1.0
+        ],
+        "baseColorTexture": {
+          "index": 3
+        },
+        "metallicRoughnessTexture": {
+          "index": 4
+        },
+        "roughnessFactor": 0.8
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "knob_black",
+      "normalTexture": {
+        "index": 8
+      },
+      "occlusionTexture": {
+        "index": 7
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 6
+        },
+        "metallicRoughnessTexture": {
+          "index": 7
+        },
+        "roughnessFactor": 0.75
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "Plate-Glass",
+      "normalTexture": {
+        "index": 11
+      },
+      "occlusionTexture": {
+        "index": 10
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 9
+        },
+        "metallicRoughnessTexture": {
+          "index": 10
+        }
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "burner_black_outer_2",
+      "normalTexture": {
+        "index": 14
+      },
+      "occlusionTexture": {
+        "index": 13
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 12
+        },
+        "metallicRoughnessTexture": {
+          "index": 13
+        },
+        "roughnessFactor": 0.7
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "burner_black_inner_2",
+      "normalTexture": {
+        "index": 17
+      },
+      "occlusionTexture": {
+        "index": 16
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 15
+        },
+        "metallicRoughnessTexture": {
+          "index": 16
+        },
+        "roughnessFactor": 0.7
+      }
+    },
+    {
+      "doubleSided": true,
+      "name": "burner_black_area",
+      "normalTexture": {
+        "index": 20
+      },
+      "occlusionTexture": {
+        "index": 19
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 18
+        },
+        "metallicRoughnessTexture": {
+          "index": 19
+        }
+      }
+    },
+    {
+      "doubleSided": true,
+      "extensions": {
+        "KHR_materials_specular": {
+          "specularColorFactor": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "specularFactor": 0.45
+        }
+      },
+      "name": "burner_small_base",
+      "normalTexture": {
+        "index": 23
+      },
+      "occlusionTexture": {
+        "index": 22
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 21
+        },
+        "metallicRoughnessTexture": {
+          "index": 22
+        },
+        "roughnessFactor": 0.85
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "Knob3_knob_red_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 1,
+            "POSITION": 0,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3,
+            "TEXCOORD_1": 4,
+            "TEXCOORD_2": 5
+          },
+          "indices": 6,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Knob3_dial_marks_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 8,
+            "POSITION": 7,
+            "TANGENT": 9,
+            "TEXCOORD_0": 10,
+            "TEXCOORD_1": 11
+          },
+          "indices": 12,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Knob3_knob_black_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 14,
+            "POSITION": 13,
+            "TANGENT": 15,
+            "TEXCOORD_0": 16,
+            "TEXCOORD_1": 17,
+            "TEXCOORD_2": 18
+          },
+          "indices": 19,
+          "material": 2,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "stove bezel1_Plate-Glass_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 21,
+            "POSITION": 20,
+            "TANGENT": 22,
+            "TEXCOORD_0": 23,
+            "TEXCOORD_1": 24,
+            "TEXCOORD_2": 25
+          },
+          "indices": 26,
+          "material": 3,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "burner area.002_burner_black_outer_2_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 28,
+            "POSITION": 27,
+            "TANGENT": 29,
+            "TEXCOORD_0": 30,
+            "TEXCOORD_1": 31,
+            "TEXCOORD_2": 32,
+            "TEXCOORD_3": 33
+          },
+          "indices": 34,
+          "material": 4,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "burner_main.002_burner_black_inner_2_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 36,
+            "POSITION": 35,
+            "TANGENT": 37,
+            "TEXCOORD_0": 38,
+            "TEXCOORD_1": 39,
+            "TEXCOORD_2": 40
+          },
+          "indices": 41,
+          "material": 5,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "RA - burner stands.001 - 0_burner_black_area_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 43,
+            "POSITION": 42,
+            "TANGENT": 44,
+            "TEXCOORD_0": 45,
+            "TEXCOORD_1": 46,
+            "TEXCOORD_2": 47
+          },
+          "indices": 48,
+          "material": 6,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "stove base.004_burner_small_base_0",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 50,
+            "POSITION": 49,
+            "TANGENT": 51,
+            "TEXCOORD_0": 52
+          },
+          "indices": 53,
+          "material": 7,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        2.220446049250313e-16,
+        -1.0,
+        0.0,
+        0.0,
+        1.0,
+        2.220446049250313e-16,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "Sketchfab_model"
+    },
+    {
+      "children": [
+        2
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        -1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "name": "0e8b706c673f49a298d69d51bece2fca.fbx"
+    },
+    {
+      "children": [
+        3,
+        7,
+        9,
+        11,
+        13,
+        15
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        4,
+        5,
+        6
+      ],
+      "matrix": [
+        100.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.629206793918314e-05,
+        -99.99999999999868,
+        0.0,
+        0.0,
+        99.99999999999868,
+        -1.629206793918314e-05,
+        0.0,
+        25.419330596923828,
+        54.26570129394531,
+        0.05532503128051758,
+        1.0
+      ],
+      "name": "Knob3"
+    },
+    {
+      "mesh": 0,
+      "name": "Knob3_knob_red_0"
+    },
+    {
+      "mesh": 1,
+      "name": "Knob3_dial_marks_0"
+    },
+    {
+      "mesh": 2,
+      "name": "Knob3_knob_black_0"
+    },
+    {
+      "children": [
+        8
+      ],
+      "matrix": [
+        100.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.629206793918314e-05,
+        -99.99999999999868,
+        0.0,
+        0.0,
+        99.99999999999868,
+        -1.629206793918314e-05,
+        0.0,
+        24.930179595947266,
+        43.25600814819336,
+        0.05625486373901367,
+        1.0
+      ],
+      "name": "stove bezel1"
+    },
+    {
+      "mesh": 3,
+      "name": "stove bezel1_Plate-Glass_0"
+    },
+    {
+      "children": [
+        10
+      ],
+      "matrix": [
+        100.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.629206793918314e-05,
+        -99.99999999999868,
+        0.0,
+        0.0,
+        99.99999999999868,
+        -1.629206793918314e-05,
+        0.0,
+        0.3299236297607422,
+        66.1198959350586,
+        0.04242658615112305,
+        1.0
+      ],
+      "name": "burner area.002"
+    },
+    {
+      "mesh": 4,
+      "name": "burner area.002_burner_black_outer_2_0"
+    },
+    {
+      "children": [
+        12
+      ],
+      "matrix": [
+        100.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.629206793918314e-05,
+        -99.99999999999868,
+        0.0,
+        0.0,
+        99.99999999999868,
+        -1.629206793918314e-05,
+        0.0,
+        0.39981603622436523,
+        68.51203155517578,
+        -0.03968477249145508,
+        1.0
+      ],
+      "name": "burner_main.002"
+    },
+    {
+      "mesh": 5,
+      "name": "burner_main.002_burner_black_inner_2_0"
+    },
+    {
+      "children": [
+        14
+      ],
+      "matrix": [
+        100.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.629206793918314e-05,
+        -99.99999999999868,
+        0.0,
+        0.0,
+        99.99999999999868,
+        -1.629206793918314e-05,
+        0.0,
+        0.3358006477355957,
+        69.75218200683594,
+        0.04004240036010742,
+        1.0
+      ],
+      "name": "RA - burner stands.001 - 0"
+    },
+    {
+      "mesh": 6,
+      "name": "RA - burner stands.001 - 0_burner_black_area_0"
+    },
+    {
+      "children": [
+        16
+      ],
+      "matrix": [
+        100.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -1.629206793918314e-05,
+        -99.99999999999868,
+        0.0,
+        0.0,
+        99.99999999999868,
+        -1.629206793918314e-05,
+        0.0,
+        1.3459573984146118,
+        59.178924560546875,
+        -0.004637241363525391,
+        1.0
+      ],
+      "name": "stove base.004"
+    },
+    {
+      "mesh": 7,
+      "name": "stove base.004_burner_small_base_0"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9987,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Sketchfab_Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    },
+    {
+      "sampler": 0,
+      "source": 2
+    },
+    {
+      "sampler": 0,
+      "source": 3
+    },
+    {
+      "sampler": 0,
+      "source": 4
+    },
+    {
+      "sampler": 0,
+      "source": 5
+    },
+    {
+      "sampler": 0,
+      "source": 6
+    },
+    {
+      "sampler": 0,
+      "source": 7
+    },
+    {
+      "sampler": 0,
+      "source": 8
+    },
+    {
+      "sampler": 0,
+      "source": 9
+    },
+    {
+      "sampler": 0,
+      "source": 10
+    },
+    {
+      "sampler": 0,
+      "source": 11
+    },
+    {
+      "sampler": 0,
+      "source": 12
+    },
+    {
+      "sampler": 0,
+      "source": 13
+    },
+    {
+      "sampler": 0,
+      "source": 14
+    },
+    {
+      "sampler": 0,
+      "source": 15
+    },
+    {
+      "sampler": 0,
+      "source": 16
+    },
+    {
+      "sampler": 0,
+      "source": 17
+    },
+    {
+      "sampler": 0,
+      "source": 18
+    },
+    {
+      "sampler": 0,
+      "source": 19
+    },
+    {
+      "sampler": 0,
+      "source": 20
+    },
+    {
+      "sampler": 0,
+      "source": 21
+    },
+    {
+      "sampler": 0,
+      "source": 22
+    },
+    {
+      "sampler": 0,
+      "source": 23
+    }
+  ]
+}

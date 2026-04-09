@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class AnomalyManager : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class AnomalyManager : MonoBehaviour
     [Header("Status")]
     public int currentStreak = 0;
     public bool isAnomalyActive = false;
+
+    [Header("Fade Instellingen")]
+    public ScreenFader fader; 
     
     private int startTriggerID = 0; 
 
@@ -20,19 +24,34 @@ public class AnomalyManager : MonoBehaviour
 
     public void PlayerDecided(int touchedTriggerID, Transform nextSpawn)
     {
+        StartCoroutine(HandleDecision(touchedTriggerID, nextSpawn));
+    }
+
+    private IEnumerator HandleDecision(int touchedTriggerID, Transform nextSpawn)
+    {
+        if (fader != null) yield return StartCoroutine(fader.FadeOut());
+
         bool hasWalkedToOtherSide = (touchedTriggerID != startTriggerID);
         bool correct = false;
 
-        if (isAnomalyActive) 
+        // --- NIEUWE LOGICA VOOR LEVEL 0 ---
+        if (currentStreak == 0)
         {
-            // Er IS een anomalie -> Je MOET doorlopen naar de overkant (+1)
-            if (hasWalkedToOtherSide) correct = true;
+            // In de eerste ronde (of na reset) is elke keuze goed
+            correct = true;
+            Debug.Log("<color=cyan>Level 0:</color> Keuze maakt niet uit, je gaat door.");
+        }
+        else if (isAnomalyActive) 
+        {
+            // Er IS een anomalie -> Je MOET TERUGGAAN (Zelfde kant blijven)
+            if (!hasWalkedToOtherSide) correct = true;
         } 
         else 
         {
-            // Er is GEEN anomalie -> Je MOET teruggaan (+1)
-            if (!hasWalkedToOtherSide) correct = true;
+            // Er is GEEN anomalie -> Je MOET DOORLOPEN (Naar de overkant)
+            if (hasWalkedToOtherSide) correct = true;
         }
+        // ----------------------------------
 
         if (correct) 
         {
@@ -47,9 +66,14 @@ public class AnomalyManager : MonoBehaviour
 
         startTriggerID = touchedTriggerID;
 
+        // Teleporteer speler via CharacterController
         TeleportPlayer(nextSpawn);
         ResetRoom();
         DetermineNextAnomaly();
+
+        yield return new WaitForSeconds(0.2f);
+
+        if (fader != null) yield return StartCoroutine(fader.FadeIn());
     }
 
     private void TeleportPlayer(Transform target) {
@@ -65,15 +89,14 @@ public class AnomalyManager : MonoBehaviour
     }
 
     private void DetermineNextAnomaly() {
-        // NIEUWE LOGICA: Als de streak 0 is, mag er NOOIT een anomalie zijn.
+        // Bij streak 0 forceren we dat er geen anomalie is zodat de speler een referentiepunt heeft
         if (currentStreak == 0)
         {
             isAnomalyActive = false;
             Debug.Log("<color=cyan>Eerste ronde/Reset:</color> Geforceerd GEEN anomalie.");
-            return; // We stoppen hier, dus de rest van de kansberekening wordt overgeslagen.
+            return;
         }
 
-        // Normale kansberekening voor streaks hoger dan 0
         if (Random.value < anomalyChance && allAnomalies.Length > 0) {
             int index = Random.Range(0, allAnomalies.Length);
             GameObject group = allAnomalies[index];

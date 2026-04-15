@@ -119,6 +119,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+<<<<<<< Updated upstream
 --- !u!1001 &140892
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3045,6 +3046,8 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3635302771887467899, guid: 890a5a0b9ab3f1040912f4765036412d, type: 3}
+=======
+>>>>>>> Stashed changes
 --- !u!1 &682317748
 GameObject:
   m_ObjectHideFlags: 0
@@ -3056,7 +3059,10 @@ GameObject:
   - component: {fileID: 682317751}
   - component: {fileID: 682317750}
   - component: {fileID: 682317749}
+<<<<<<< Updated upstream
   - component: {fileID: 682317752}
+=======
+>>>>>>> Stashed changes
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3138,6 +3144,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
 --- !u!114 &682317752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5407,6 +5414,8 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -8803937527578110353, guid: 890a5a0b9ab3f1040912f4765036412d, type: 3}
+=======
+>>>>>>> Stashed changes
 --- !u!1 &1122204490
 GameObject:
   m_ObjectHideFlags: 0
@@ -5417,7 +5426,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1122204492}
   - component: {fileID: 1122204491}
+<<<<<<< Updated upstream
   - component: {fileID: 1122204493}
+=======
+>>>>>>> Stashed changes
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -5505,6 +5517,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+<<<<<<< Updated upstream
 --- !u!114 &1122204493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11938,12 +11951,15 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5495902117074765545, guid: 2489797d54b2a5f43962b448d982c497, type: 3}
+=======
+>>>>>>> Stashed changes
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 682317751}
   - {fileID: 1122204492}
+<<<<<<< Updated upstream
   - {fileID: 1873009292}
   - {fileID: 1525165655}
   - {fileID: 552698329}
@@ -12012,3 +12028,5 @@ SceneRoots:
   - {fileID: 1340322212}
   - {fileID: 439523582}
   - {fileID: 1901381525}
+=======
+>>>>>>> Stashed changes

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class AnomalyManager : MonoBehaviour
 {
@@ -8,8 +9,9 @@ public class AnomalyManager : MonoBehaviour
     public GameObject[] allAnomalies; 
 
     [Header("Status")]
-    public int currentStreak = 0;
+    public int currentStreak = 10; 
     public bool isAnomalyActive = false;
+    public string volgendeSceneNaam = "MallStore2lvl0"; 
 
     [Header("Fade Instellingen")]
     public ScreenFader fader; 
@@ -18,8 +20,12 @@ public class AnomalyManager : MonoBehaviour
 
     void Start() {
         startTriggerID = 0; 
+        currentStreak = 10; 
         ResetRoom();
         DetermineNextAnomaly();
+        
+        // Zet de tekst bij de start op 10 Left
+        if (fader != null) fader.SetStatusText(currentStreak + " Left");
     }
 
     public void PlayerDecided(int touchedTriggerID, Transform nextSpawn)
@@ -29,50 +35,61 @@ public class AnomalyManager : MonoBehaviour
 
     private IEnumerator HandleDecision(int touchedTriggerID, Transform nextSpawn)
     {
+        // 1. Fade naar zwart (tekst fadet mee in naar wit/zichtbaar)
         if (fader != null) yield return StartCoroutine(fader.FadeOut());
 
         bool hasWalkedToOtherSide = (touchedTriggerID != startTriggerID);
         bool correct = false;
 
-        // --- NIEUWE LOGICA VOOR LEVEL 0 ---
-        if (currentStreak == 0)
+        // Logica: Level 10 is altijd veilig/goed
+        if (currentStreak == 10)
         {
-            // In de eerste ronde (of na reset) is elke keuze goed
             correct = true;
-            Debug.Log("<color=cyan>Level 0:</color> Keuze maakt niet uit, je gaat door.");
         }
         else if (isAnomalyActive) 
         {
-            // Er IS een anomalie -> Je MOET TERUGGAAN (Zelfde kant blijven)
+            // Er is een anomalie: Je moet omdraaien (Zelfde kant blijven als spawn)
             if (!hasWalkedToOtherSide) correct = true;
         } 
         else 
         {
-            // Er is GEEN anomalie -> Je MOET DOORLOPEN (Naar de overkant)
+            // Geen anomalie: Je moet doorlopen naar de overkant
             if (hasWalkedToOtherSide) correct = true;
         }
-        // ----------------------------------
 
+        // Streak bijwerken
         if (correct) 
         {
-            currentStreak++;
-            Debug.Log("<color=green>GOED!</color> Streak: " + currentStreak);
+            currentStreak--;
         } 
         else 
         {
-            currentStreak = 0;
-            Debug.Log("<color=red>FOUT!</color> Streak gereset naar 0.");
+            currentStreak = 10; // Reset naar het beginpunt
         }
 
-        startTriggerID = touchedTriggerID;
+        // Check of we de volgende scene moeten laden
+        if (currentStreak <= 0)
+        {
+            SceneManager.LoadScene(volgendeSceneNaam);
+            yield break;
+        }
 
-        // Teleporteer speler via CharacterController
+        // 2. Teleport en Reset (gebeurt terwijl alles 100% zwart is)
+        startTriggerID = touchedTriggerID;
         TeleportPlayer(nextSpawn);
         ResetRoom();
         DetermineNextAnomaly();
 
-        yield return new WaitForSeconds(0.2f);
+        // 3. Tekst aanpassen naar het nieuwe getal terwijl het nog pikdonker is
+        if (fader != null)
+        {
+            fader.SetStatusText(currentStreak + " Left");
+        }
 
+        // Korte pauze voor de sfeer
+        yield return new WaitForSeconds(0.3f);
+
+        // 4. Fade weer naar licht (tekst fadet mee uit naar onzichtbaar)
         if (fader != null) yield return StartCoroutine(fader.FadeIn());
     }
 
@@ -89,11 +106,10 @@ public class AnomalyManager : MonoBehaviour
     }
 
     private void DetermineNextAnomaly() {
-        // Bij streak 0 forceren we dat er geen anomalie is zodat de speler een referentiepunt heeft
-        if (currentStreak == 0)
+        // Op Level 10 is er NOOIT een anomalie
+        if (currentStreak == 10)
         {
             isAnomalyActive = false;
-            Debug.Log("<color=cyan>Eerste ronde/Reset:</color> Geforceerd GEEN anomalie.");
             return;
         }
 
@@ -109,10 +125,8 @@ public class AnomalyManager : MonoBehaviour
             if (a != null) a.gameObject.SetActive(true);
             
             isAnomalyActive = true;
-            Debug.Log("Anomalie geactiveerd!");
         } else {
             isAnomalyActive = false;
-            Debug.Log("Geen anomalie.");
         }
     }
 

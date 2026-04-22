@@ -7,8 +7,98 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Glass - Clear
+    second: {fileID: 2100000, guid: 1a2c1265997001745b441459c31c387e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass - Clear - Bumps
+    second: {fileID: 2100000, guid: 5ed73c265eccd0b488015724a1ec971a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass - Clear - Ridged - UV
+    second: {fileID: 2100000, guid: 34204e72c8d1d624c9046df69f6d5172, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass - Clear - Ridged_
+    second: {fileID: 2100000, guid: c9c556c9efe312b49b2f7bec9ede3580, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass - Red
+    second: {fileID: 2100000, guid: 946fad02278412c4cbfeff3522443a03, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Glass - Red - Rough
     second: {fileID: 8486936951020155453, guid: e3e4ebc5e285b0047af33f115f58c7d4, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass ext
+    second: {fileID: 2100000, guid: 74fab3e8d84b39f47a64fd771fd57937, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass ext-tinted
+    second: {fileID: 2100000, guid: d0bcf22b204ba024d849b316dedfe850, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rubber - Black
+    second: {fileID: 2100000, guid: db8aef361e0411e4894ac59848f9a438, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: black-metal
+    second: {fileID: 2100000, guid: eb5f2b6b98cd9a447bb2799a2146040b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: car-body
+    second: {fileID: 2100000, guid: 1169b7c43f4b1e6429dba9c018e4b8b1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: front-grille-texture
+    second: {fileID: 2100000, guid: db0002c96e4096c43a57d2bcd5769440, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: interior
+    second: {fileID: 2100000, guid: d76a41b06b7d8304f95c0a8c2c309d3e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mechanics
+    second: {fileID: 2100000, guid: eb10250bac2b1fb4faafdaaa38fc60e2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: media
+    second: {fileID: 2100000, guid: 6d17247a86f791041b67ae0ee41dfb2d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mirror
+    second: {fileID: 2100000, guid: 873f13b7396b5ce498816da9fe800133, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tire-low.001
+    second: {fileID: 2100000, guid: 83d151e0ba2c77149a902434a3e1e692, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wheel-brake-disc
+    second: {fileID: 2100000, guid: 76546fb12e8b660469af64aad7ef04d3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wipers
+    second: {fileID: 2100000, guid: 5a3d9afd62748894299105d327d38ff0, type: 2}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule

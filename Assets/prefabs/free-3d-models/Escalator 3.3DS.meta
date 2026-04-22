@@ -3,7 +3,42 @@ guid: ee725ceae3006e04b84fd80ee9d77dec
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: arrival_plate1
+    second: {fileID: 2100000, guid: 556a70d2cc801184d9f9eed8bb792684, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: black
+    second: {fileID: 2100000, guid: 4a6e910daf001f9468243bee8f2494cd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: esc_glass
+    second: {fileID: 2100000, guid: 4bc4da62fe0de14419d63421f18a286b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: esc_metal
+    second: {fileID: 2100000, guid: 0966b758d77d7a947b06bfe407b1f36f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rubber1
+    second: {fileID: 2100000, guid: f147d0137c1d99a4c917253e67bb3a5b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: steps_metal1
+    second: {fileID: 2100000, guid: 8ca857750531e2e4a89c0864f9a18612, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: steps_metal2
+    second: {fileID: 2100000, guid: 0738dd32a35b2d34a8d7b594ea1c7792, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

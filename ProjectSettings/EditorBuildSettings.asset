@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Anomaly2.unity
     guid: d94f5c64302ceff40a3b328369d06f91
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 0b23564f8492abe4c9dfbc39c92a4057
+  - enabled: 1
     path: Assets/Scenes/MallStore1lvl0.unity
     guid: bf890530ffde24149b138f13efafb7e1
   - enabled: 1

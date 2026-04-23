@@ -1,29 +1,44 @@
 using UnityEngine;
-using UnityEngine.SceneManagement; // Nodig om tussen scenes te wisselen
+using UnityEngine.SceneManagement;
 
 public class MenuHelper : MonoBehaviour
 {
-    [Header("Instellingen")]
-    public string mainMenuSceneName = "MainMenu"; // Typ hier de exacte naam van je menu-scene
+    [Header("Scene Instellingen")]
+    public string mainMenuSceneName = "MainMenu";
 
-    // Deze functie koppelen we aan de knop
+    [Header("Audio Instellingen")]
+    public AudioSource sceneMusic; // Sleep hier de AudioSource in die moet loopen
+    public bool playOnStart = true;
+
+    void Start()
+    {
+        // Als je wilt dat de muziek direct begint zodra de scene laadt
+        if (playOnStart && sceneMusic != null)
+        {
+            sceneMusic.loop = true; // Forceer loop op true
+            sceneMusic.Play();
+        }
+    }
+
+    // Functie om naar het menu te gaan
     public void GoToMainMenu()
     {
-        Debug.Log("Terugkeren naar het hoofdmenu...");
-        
-        // Zorg dat de tijd weer op normaal staat (mocht je de game gepauzeerd hebben)
         Time.timeScale = 1f;
-
-        // Laad de menu scene
         SceneManager.LoadScene(mainMenuSceneName);
     }
 
-    // De Quit functie kun je eronder laten staan voor het geval je die ergens anders nodig hebt
+    // Functie om de game af te sluiten
     public void QuitGame()
     {
         Application.Quit();
         #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
         #endif
+    }
+
+    // Extra: Functie om muziek handmatig te stoppen via een knop
+    public void StopMusic()
+    {
+        if (sceneMusic != null) sceneMusic.Stop();
     }
 }

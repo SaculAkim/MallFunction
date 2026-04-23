@@ -10,6 +10,10 @@ public class IntroManager : MonoBehaviour
     public GameObject mainMenuPanel;
     public GameObject introPanel;
 
+    [Header("Audio")]
+    public AudioSource menuMusic;  // Sleep hier de AudioSource van het Hoofdmenu in
+    public AudioSource introMusic; // Sleep hier de AudioSource van de Intro in
+
     [Header("Uitleg Stappen")]
     public GameObject[] textSteps; 
     public GameObject loadingStep; 
@@ -24,12 +28,23 @@ public class IntroManager : MonoBehaviour
 
     void Start()
     {
+        // Bij de start: Panels goedzetten
         if(mainMenuPanel) mainMenuPanel.SetActive(true);
         if(introPanel) introPanel.SetActive(false);
+
+        // Start de menu muziek direct (zorg dat Loop aan staat op de AudioSource)
+        if (menuMusic != null) 
+        {
+            menuMusic.Play();
+        }
     }
 
     public void StartIntro()
     {
+        // WISSEL MUZIEK: Stop menu, start intro
+        if (menuMusic != null) menuMusic.Stop();
+        if (introMusic != null) introMusic.Play();
+
         mainMenuPanel.SetActive(false);
         introPanel.SetActive(true);
         currentStep = 0;
@@ -40,7 +55,6 @@ public class IntroManager : MonoBehaviour
     void Update()
     {
         // Alleen reageren op Spatie voor de eerste stappen
-        // Zodra het laden begint (bij de laatste stap), negeren we Spatie
         if (isIntroActive && !loadingStarted && Input.GetKeyDown(KeyCode.Space))
         {
             NextStep();
@@ -65,10 +79,9 @@ public class IntroManager : MonoBehaviour
         // Is dit de allerlaatste tekst stap?
         if (stepIndex == textSteps.Length - 1)
         {
-            loadingStarted = true; // Stop het reageren op Spatie
+            loadingStarted = true; 
             if(loadingStep) loadingStep.SetActive(true);
             
-            // Start de timer en het laden tegelijk
             StartCoroutine(WaitAndLoad());
         }
     }
@@ -77,19 +90,12 @@ public class IntroManager : MonoBehaviour
     {
         Debug.Log("De 10 seconden timer is gestart...");
 
-        // 1. Start het laden van de scene op de achtergrond
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(gameSceneName);
-        
-        // Voorkom dat de scene direct opent als hij binnen die 10 sec klaar is
         asyncLoad.allowSceneActivation = false;
 
-        // 2. Wacht exact 10 seconden
-        // De GIF blijft bewegen omdat de Coroutine elke frame terugkeert naar Unity
         yield return new WaitForSeconds(forcedWaitTime);
 
         Debug.Log("10 seconden zijn voorbij. Scene wordt nu geactiveerd.");
-
-        // 3. Laat de scene nu echt openen
         asyncLoad.allowSceneActivation = true;
     }
 

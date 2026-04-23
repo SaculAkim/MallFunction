@@ -1,13 +1,17 @@
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro; // Vereist voor TextMeshPro
+using TMPro;
 using System.Collections;
 
 public class ScreenFader : MonoBehaviour
 {
     public Image fadeImage;
-    public TextMeshProUGUI statusText; // Sleep hier je UI tekst naartoe
+    public TextMeshProUGUI statusText;
     public float fadeSpeed = 1.0f;
+
+    [Header("Audio Settings")]
+    public AudioSource fadeInSound;  // Geluid bij start van level
+    public AudioSource fadeOutSound; // Geluid bij einde/transitie
 
     void Start()
     {
@@ -15,7 +19,6 @@ public class ScreenFader : MonoBehaviour
         if (fadeImage != null) StartCoroutine(FadeIn());
     }
 
-    // Wordt aangeroepen door AnomalyManager
     public void SetStatusText(string text)
     {
         if (statusText != null)
@@ -26,6 +29,9 @@ public class ScreenFader : MonoBehaviour
 
     public IEnumerator FadeOut()
     {
+        // --- NIEUW: Speel Fade Out geluid ---
+        if (fadeOutSound != null) fadeOutSound.Play();
+
         float alpha = 0;
         while (alpha < 1)
         {
@@ -37,6 +43,9 @@ public class ScreenFader : MonoBehaviour
 
     public IEnumerator FadeIn()
     {
+        // --- NIEUW: Speel Fade In geluid ---
+        if (fadeInSound != null) fadeInSound.Play();
+
         float alpha = 1;
         while (alpha > 0)
         {
@@ -46,20 +55,17 @@ public class ScreenFader : MonoBehaviour
         }
     }
 
-    // Deze methode zorgt dat de achtergrond en de tekst PRECIES tegelijk faden
     private void SetAlpha(float alpha)
     {
         float clampedAlpha = Mathf.Clamp01(alpha);
 
-        // Update zwart vlak
         if (fadeImage != null)
         {
             Color c = fadeImage.color;
             c.a = clampedAlpha;
             fadeImage.color = c;
         }
-        
-        // Update tekst (fadet mee op exact hetzelfde tempo)
+
         if (statusText != null)
         {
             Color tc = statusText.color;

@@ -29,8 +29,10 @@ public class Flashlight : MonoBehaviour
     public float swayFrequency = 1.4f;
     public float swayLerpSpeed = 10f;
 
+    [Header("State")]
+    [SerializeField] private bool pickedUp = false; // Nu zichtbaar in de Inspector
+
     private bool isOn;
-    private bool pickedUp = false; // <<< gate toggling until picked up
     private Quaternion baseRot;
     private Vector3 lastPos;
     private float movementAmount;
@@ -50,6 +52,9 @@ public class Flashlight : MonoBehaviour
         if (!flashlight) flashlight = GetComponentInChildren<Light>(true);
         if (flashlight && flashlight.type != LightType.Spot) flashlight.type = LightType.Spot;
         if (flashlight) flashlight.cookie = cookie;
+
+        // Als de zaklamp al aan moet staan bij start, markeer hem dan ook als opgepakt
+        if (startOn) pickedUp = true;
 
         isOn = startOn;
         if (flashlight)
@@ -73,7 +78,7 @@ public class Flashlight : MonoBehaviour
 
     bool WasTogglePressed()
     {
-        // <<< block input until picked up
+        // Blokkeer input alleen als hij niet is opgepakt
         if (!pickedUp) return false;
 
 #if ENABLE_INPUT_SYSTEM
@@ -100,7 +105,7 @@ public class Flashlight : MonoBehaviour
         float targetRange = isOn ? maxRange : 0f;
 
         flashlight.intensity = Mathf.Lerp(flashlight.intensity, targetIntensity, dt / Mathf.Max(0.001f, toggleFadeTime));
-        flashlight.range     = Mathf.Lerp(flashlight.range,     targetRange,     dt / Mathf.Max(0.001f, toggleFadeTime));
+        flashlight.range = Mathf.Lerp(flashlight.range, targetRange, dt / Mathf.Max(0.001f, toggleFadeTime));
 
         if (!isOn && flashlight.enabled && flashlight.intensity < 0.01f) flashlight.enabled = false;
         if (isOn && !flashlight.enabled && flashlight.intensity > 0.02f) flashlight.enabled = true;
@@ -124,18 +129,11 @@ public class Flashlight : MonoBehaviour
         transform.localRotation = Quaternion.Slerp(transform.localRotation, swayRot, dt * swayLerpSpeed);
     }
 
-    public bool IsOn => isOn;
-
-    // ---------- Pickup / Drop ----------
+    // ---------- Pickup / Drop Logic ----------
     public void PickUp()
     {
-        pickedUp = true; // <<<
+        pickedUp = true;
         gameObject.SetActive(true);
-        if (flashlight)
-        {
-            flashlight.enabled = isOn;
-            if (!isOn) { flashlight.intensity = 0f; flashlight.range = 0f; }
-        }
     }
 
     public void PickUp(Transform parent)
@@ -150,30 +148,10 @@ public class Flashlight : MonoBehaviour
         }
     }
 
-    public void PickUp(Transform parent, Vector3 localPosition, Quaternion localRotation)
-    {
-        PickUp(parent);
-        transform.localPosition = localPosition;
-        transform.localRotation = localRotation;
-    }
-
-    public void PickUp(Transform parent, Vector3 localPosition, Vector3 localEulerAngles)
-    {
-        PickUp(parent);
-        transform.localPosition = localPosition;
-        transform.localRotation = Quaternion.Euler(localEulerAngles);
-    }
-
     public void Drop()
     {
         transform.SetParent(null, true);
-        pickedUp = false; // <<<
+        pickedUp = false;
         isOn = false;
-        if (flashlight)
-        {
-            flashlight.intensity = 0f;
-            flashlight.range = 0f;
-            flashlight.enabled = false;
-        }
     }
 }
